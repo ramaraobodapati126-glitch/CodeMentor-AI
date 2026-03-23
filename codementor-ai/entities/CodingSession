@@ -1,0 +1,65 @@
+{
+  "name": "CodingSession",
+  "type": "object",
+  "properties": {
+    "code": {
+      "type": "string",
+      "description": "The submitted code"
+    },
+    "language": {
+      "type": "string",
+      "enum": [
+        "python",
+        "java",
+        "cpp",
+        "javascript"
+      ],
+      "description": "Programming language"
+    },
+    "analysis": {
+      "type": "string",
+      "description": "AI analysis result"
+    },
+    "mistakes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "severity": {
+            "type": "string",
+            "enum": [
+              "low",
+              "medium",
+              "high"
+            ]
+          }
+        }
+      }
+    },
+    "corrected_code": {
+      "type": "string",
+      "description": "AI-corrected version"
+    },
+    "topics": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Topics detected in the code"
+    },
+    "score": {
+      "type": "number",
+      "description": "Code quality score 0-100"
+    }
+  },
+  "required": [
+    "code",
+    "language"
+  ]
+}

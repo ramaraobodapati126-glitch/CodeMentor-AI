@@ -1,0 +1,55 @@
+{
+  "name": "LearningMemory",
+  "type": "object",
+  "properties": {
+    "problem_type": {
+      "type": "string",
+      "description": "e.g. sliding window, DP, recursion"
+    },
+    "mistake_type": {
+      "type": "string",
+      "description": "e.g. off-by-one, wrong loop, boundary condition"
+    },
+    "language": {
+      "type": "string",
+      "enum": [
+        "python",
+        "java",
+        "cpp",
+        "javascript"
+      ]
+    },
+    "frequency": {
+      "type": "number",
+      "default": 1,
+      "description": "How many times this mistake was made"
+    },
+    "last_occurrence": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "resolved": {
+      "type": "boolean",
+      "default": false
+    },
+    "context": {
+      "type": "string",
+      "description": "Additional context about the mistake"
+    },
+    "confidence_level": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "default": "low",
+      "description": "User confidence in this topic"
+    }
+  },
+  "required": [
+    "problem_type",
+    "mistake_type",
+    "language"
+  ]
+}
